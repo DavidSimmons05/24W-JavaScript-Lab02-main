@@ -34,8 +34,10 @@ function changeRgb(channel, value){
         // global rgb array element (0, 1, or 2)
         case 'red':
             rgb[0] = value;
+            break;
         case 'green':
             rgb[1] = value;
+            break;
         case 'blue':
             rgb[2] = value;
     }
@@ -44,15 +46,15 @@ function changeRgb(channel, value){
 }
 
 // STEP 5: Write a new function called writeCSS that accepts one parameter, the updated rgb array
-function writeCSS(rgb){
+function writeCSS(newRgb){
     /* STEP 6: Declare a new local variable called newColor that will contain the new string that will be used to update the CSS 
     background-color property in the following format: rgb(0,0,0) - initialize it with the start of the string, 'rgb(' */
     var newColor = 'rgb(';
     // STEP 7: Create a while loop that iterates through the array passed into this function, called newRgb (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
     var i = 0;
-    while(i < rgb.length){
+    while(i < newRgb.length){
         // STEP 8: For each element of the array, add to the string newColor, the red, green, and blue values, each followed by a comma
-        newColor += rgb[i] + ',';
+        newColor += newRgb[i] + ',';
         i++;
     }
     // STEP 9: Slice off the last comma from the string contained by the variable, newColor - we don’t need it (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
